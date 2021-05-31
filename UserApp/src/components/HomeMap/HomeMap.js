@@ -5,7 +5,7 @@ import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps'
 import { listCars } from '../../graphql/queries';
 import { API, graphqlOperation } from 'aws-amplify'
 
-export default function HomeMap() {
+export default function HomeMap(props) {
     const [cars, setCars] = useState([])
 
     useEffect(() => {

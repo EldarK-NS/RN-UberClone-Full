@@ -42,11 +42,7 @@ export default function SearchResults(props) {
                     createOrder, { input }
                 )
             )
-            console.log(response)
-            Alert.alert("Success!", "Your order has been submited", [{
-                text: "Go home",
-                onPress: () => navigation.navigate('Home')
-            }])
+            navigation.navigate('OrderPage', { id: response.data.createOrder.id })
         } catch (err) {
             console.log(err)
         }

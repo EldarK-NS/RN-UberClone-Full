@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import DestinationSearchScreen from './../screens/DestinationSearch/DestinationSearchScreen';
 import SearchResults from './../components/SearchResults/SearchResults';
+import OrderScreen from './../screens/OrderScreen/OrderScreen';
 
 
 const Stack = createStackNavigator();
@@ -35,6 +36,10 @@ export default function HomeNavigator({ navigation }) {
             <Stack.Screen
                 name='SearchResults'
                 component={SearchResults}
+            />
+            <Stack.Screen
+                name='OrderPage'
+                component={OrderScreen}
             />
         </Stack.Navigator>
     )

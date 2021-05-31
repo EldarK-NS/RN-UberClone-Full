@@ -26,7 +26,6 @@ export default function SearchResults(props) {
             const userInfo = await Auth.currentAuthenticatedUser()
             // console.log(userInfo)
             const date = new Date()
-            const createdAt = date.toISOString()
             const input = {
                 type: type,
                 originlatitude: originPlace.details.geometry.location.lat,
@@ -35,7 +34,8 @@ export default function SearchResults(props) {
                 destlongitude: destinationPlace.details.geometry.location.lng,
                 userId: userInfo.attributes.sub,
                 carId: '1',
-                createdAt: createdAt
+                createdAt: date.toISOString(),
+                status: 'NEW'
             }
             const response = await API.graphql(
                 graphqlOperation(
